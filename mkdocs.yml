@@ -1,8 +1,8 @@
-site_name: Otterdog configuration @ {{ org }}
-site_description: Otterdog configuration @ {{ org }}
+site_name: Otterdog configuration @ eclipse-sumo
+site_description: Otterdog configuration @ eclipse-sumo
 strict: true
 
-site_url: https://{{ org }}.github.io/.eclipsefdn/
+site_url: https://eclipse-sumo.github.io/.eclipsefdn/
 
 docs_dir: ./docs
 site_dir: ./_site
