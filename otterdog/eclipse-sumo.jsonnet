@@ -1,0 +1,98 @@
+local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
+
+orgs.newOrg('eclipse-sumo') {
+  settings+: {
+    default_repository_permission: "none",
+    dependabot_security_updates_enabled_for_new_repositories: false,
+    description: "",
+    members_can_change_project_visibility: false,
+    name: "Eclipse SUMO",
+    packages_containers_internal: false,
+    packages_containers_public: false,
+    readers_can_create_discussions: true,
+    two_factor_requirement: false,
+    web_commit_signoff_required: false,
+    workflows+: {
+      actions_can_approve_pull_request_reviews: false,
+    },
+  },
+  _repositories+:: [
+    orgs.newRepo('sumo') {
+      allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
+      description: "Eclipse SUMO is an open source, highly portable, microscopic and continuous traffic simulation package designed to handle large networks. It allows for intermodal simulation including pedestrians and comes with a large set of tools for scenario creation.",
+      has_projects: false,
+      has_wiki: false,
+      homepage: "https://eclipse.dev/sumo",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
+      topics+: [
+        "simulation",
+        "traffic",
+        "transport"
+      ],
+      web_commit_signoff_required: false,
+      webhooks: [
+        orgs.newRepoWebhook('https://codeclimate.com/webhooks') {
+          events+: [
+            "pull_request",
+            "push"
+          ],
+        },
+        orgs.newRepoWebhook('https://ci.appveyor.com/api/github/webhook?id=yapwb9eom0fewyfw') {
+          events+: [
+            "pull_request",
+            "push"
+          ],
+        },
+        orgs.newRepoWebhook('https://notify.travis-ci.org') {
+          events+: [
+            "create",
+            "delete",
+            "issue_comment",
+            "member",
+            "public",
+            "pull_request",
+            "push",
+            "repository"
+          ],
+        },
+        orgs.newRepoWebhook('https://ci.eclipse.org/sumo/github-webhook/') {
+          events+: [
+            "create"
+          ],
+        },
+        orgs.newRepoWebhook('https://hosted.weblate.org/hooks/github/') {
+          events+: [
+            "push"
+          ],
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('PYPI_TOKEN') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TEST_PYPI_TOKEN') {
+          value: "********",
+        },
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: null,
+          requires_pull_request: false,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
+    },
+    orgs.newRepo('sumo.website') {
+      allow_update_branch: false,
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
+  ],
+}
