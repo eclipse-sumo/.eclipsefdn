@@ -67,6 +67,13 @@ orgs.newOrg('eclipse-sumo') {
             "push"
           ],
         },
+        orgs.newRepoWebhook('https://zenodo.org/api/hooks/receivers/github/events/?access_token=PAfXc7fTEDVgFwnZiBvqmNrQ4gmv7fVqPAM6VqSVDtwLTjHfEgMClW2Zmzdi') {
+          content_type: "json",
+          events+: [
+            "release"
+          ],
+          secret: "********",
+        },
       ],
       secrets: [
         orgs.newRepoSecret('PYPI_TOKEN') {
