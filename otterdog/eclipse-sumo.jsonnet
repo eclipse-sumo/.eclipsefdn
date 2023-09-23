@@ -18,7 +18,9 @@ orgs.newOrg('eclipse-sumo') {
   },
   _repositories+:: [
     orgs.newRepo('sumo') {
+      allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Eclipse SUMO is an open source, highly portable, microscopic and continuous traffic simulation package designed to handle large networks. It allows for intermodal simulation including pedestrians and comes with a large set of tools for scenario creation.",
       has_projects: false,
@@ -96,7 +98,9 @@ orgs.newOrg('eclipse-sumo') {
       ],
     },
     orgs.newRepo('sumo.website') {
+      allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
