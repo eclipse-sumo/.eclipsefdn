@@ -8,7 +8,7 @@ orgs.newOrg('eclipse-sumo') {
     members_can_change_project_visibility: false,
     name: "Eclipse SUMO",
     packages_containers_internal: false,
-    packages_containers_public: false,
+    packages_containers_public: true,
     readers_can_create_discussions: true,
     two_factor_requirement: false,
     web_commit_signoff_required: false,
