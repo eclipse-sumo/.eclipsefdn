@@ -1,6 +1,6 @@
 site_name: Otterdog configuration @ eclipse-sumo
 site_description: Otterdog configuration @ eclipse-sumo
-strict: true
+strict: false
 
 site_url: https://eclipse-sumo.github.io/.eclipsefdn/
 
