@@ -2,13 +2,11 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('eclipse-sumo') {
   settings+: {
-    default_repository_permission: "none",
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     members_can_change_project_visibility: false,
     name: "Eclipse SUMO",
     packages_containers_internal: false,
-    packages_containers_public: true,
     readers_can_create_discussions: true,
     two_factor_requirement: false,
     web_commit_signoff_required: false,
@@ -34,6 +32,9 @@ orgs.newOrg('eclipse-sumo') {
         "transport"
       ],
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
       webhooks: [
         orgs.newRepoWebhook('https://codeclimate.com/webhooks') {
           events+: [
@@ -104,6 +105,9 @@ orgs.newOrg('eclipse-sumo') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
     },
   ],
 }
