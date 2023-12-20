@@ -4,7 +4,6 @@ orgs.newOrg('eclipse-sumo') {
   settings+: {
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
-    members_can_change_project_visibility: false,
     name: "Eclipse SUMO",
     packages_containers_internal: false,
     readers_can_create_discussions: true,
