@@ -21,8 +21,6 @@ orgs.newOrg('eclipse-sumo') {
       has_projects: false,
       has_wiki: false,
       homepage: "https://eclipse.dev/sumo",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "simulation",
         "traffic",
@@ -96,8 +94,6 @@ orgs.newOrg('eclipse-sumo') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
   ],
