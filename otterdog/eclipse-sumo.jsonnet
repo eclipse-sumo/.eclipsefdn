@@ -2,7 +2,6 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('eclipse-sumo') {
   settings+: {
-    dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     name: "Eclipse SUMO",
     packages_containers_internal: false,
