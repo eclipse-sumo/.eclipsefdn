@@ -40,6 +40,7 @@ orgs.newOrg('eclipse-sumo') {
             "pull_request",
             "push"
           ],
+          secret: "********",
         },
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
