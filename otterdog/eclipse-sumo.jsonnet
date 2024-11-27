@@ -101,6 +101,9 @@ orgs.newOrg('eclipse-sumo') {
       has_wiki: false,
       homepage: "https://eclipse.dev/sumo",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('homebrew-sumo') {
       allow_merge_commit: true,
