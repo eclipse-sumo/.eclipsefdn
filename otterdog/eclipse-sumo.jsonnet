@@ -96,12 +96,18 @@ orgs.newOrg('eclipse-sumo') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      description: "This repository contains generated static files and markdown source files for the Eclipse SUMO website."
+      has_projects: false,
+      has_wiki: false,
+      homepage: "https://eclipse.dev/sumo"
       web_commit_signoff_required: false,
     },
     orgs.newRepo('homebrew-sumo') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      has_projects: false,
+      has_wiki: false,
       web_commit_signoff_required: false,
     },
   ],
