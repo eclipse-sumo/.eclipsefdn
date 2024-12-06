@@ -8,9 +8,6 @@ orgs.newOrg('eclipse-sumo') {
     packages_containers_internal: false,
     twitter_username: "EclipseSUMO",
     web_commit_signoff_required: false,
-    workflows+: {
-      actions_can_approve_pull_request_reviews: false,
-    },
   },
   _repositories+:: [
     orgs.newRepo('sumo') {
@@ -91,9 +88,6 @@ orgs.newOrg('eclipse-sumo') {
           requires_strict_status_checks: true,
         },
       ],
-      workflows+: {
-        actions_can_approve_pull_request_reviews: true,
-      },
     },
     orgs.newRepo('sumo.website') {
       allow_merge_commit: true,
