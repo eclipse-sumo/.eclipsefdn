@@ -91,6 +91,9 @@ orgs.newOrg('eclipse-sumo') {
           requires_strict_status_checks: true,
         },
       ],
+      workflows+: {
+        actions_can_approve_pull_request_reviews: true,
+      },
     },
     orgs.newRepo('sumo.website') {
       allow_merge_commit: true,
