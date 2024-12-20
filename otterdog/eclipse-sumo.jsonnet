@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-sumo') {
+orgs.newOrg('automotive.sumo', 'eclipse-sumo') {
   settings+: {
     blog: "https://eclipse.dev/sumo",
     description: "Eclipse SUMO (Simulation of Urban Mobility) is a free and open traffic simulation toolsuite",
