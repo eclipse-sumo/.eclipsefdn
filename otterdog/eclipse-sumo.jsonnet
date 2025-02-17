@@ -99,14 +99,6 @@ orgs.newOrg('automotive.sumo', 'eclipse-sumo') {
       homepage: "https://eclipse.dev/sumo",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('homebrew-sumo') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      has_projects: false,
-      has_wiki: false,
-      web_commit_signoff_required: false,
-    },
   ],
 } + {
   # snippet added due to 'https://github.com/EclipseFdn/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
