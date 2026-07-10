@@ -9,6 +9,11 @@ orgs.newOrg('automotive.sumo', 'eclipse-sumo') {
     twitter_username: "EclipseSUMO",
     web_commit_signoff_required: false,
   },
+  secrets+: [
+    orgs.newOrgSecret('SIGNPATH_API_TOKEN') {
+      value: "pass:bots/automotive.sumo/signpath.io/api-token",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('sumo') {
       allow_merge_commit: true,
