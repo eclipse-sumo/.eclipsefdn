@@ -93,6 +93,9 @@ orgs.newOrg('automotive.sumo', 'eclipse-sumo') {
           requires_strict_status_checks: true,
         },
       ],
+      workflows+: {
+        fork_pr_approval_policy: "first_time_contributors",
+      },
     },
     orgs.newRepo('sumo.website') {
       allow_merge_commit: true,
